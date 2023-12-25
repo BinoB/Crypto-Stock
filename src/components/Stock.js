@@ -50,7 +50,7 @@ function Stock() {
             <h1>Crypto Stock Market POC</h1>
           </div>
           <div className="card-body">
-            <h2>Wallet Balance: ${wallet}</h2>
+          <h2>Wallet Balance: ${wallet.toFixed(2)}</h2>
             <p>Current Ethereum Price: ${ethPrice}</p>
             <div>
               <label>
