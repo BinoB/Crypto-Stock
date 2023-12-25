@@ -4,8 +4,8 @@ import "./Stock.css";
 function Stock() {
   const [wallet, setWallet] = useState(10000);
   const [ethPrice, setEthPrice] = useState(0);
-  const [buyPrice, setBuyPrice] = useState(0);
-  const [sellPrice, setSellPrice] = useState(0);
+  const [buyPrice, setBuyPrice] = useState();
+  const [sellPrice, setSellPrice] = useState();
 
   const handleBuy = () => {
     if (ethPrice === buyPrice) {
@@ -40,6 +40,10 @@ function Stock() {
 
     // Clear interval on component unmount
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    fetchEthPrice();
   }, []);
 
   return (
